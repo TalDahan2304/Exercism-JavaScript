@@ -5,7 +5,6 @@
 // and supported IDEs when implementing this exercise. You don't need to
 // understand types, JSDoc, or TypeScript in order to complete this JavaScript
 // exercise, and can completely ignore this comment block and directive.
-
 // 👋🏽 Hi there!
 //
 // On the JavaScript track we provide you with stubs. These stubs provide a
@@ -29,41 +28,43 @@
 // work with the tests, which you can find in ./lasagna.spec.js
 //
 // Good luck preparing some lasagna!
-
 /**
  * The number of minutes it takes to prepare a single layer.
  */
-const PREPARATION_MINUTES_PER_LAYER = 2;
-
-/**
- * Determines the number of minutes the lasagna still needs to remain in the
- * oven to be properly prepared.
- *
- * @param {number} actualMinutesInOven
- * @returns {number} the number of minutes remaining
- */
-export function remainingMinutesInOven(actualMinutesInOven) {
-  throw new Error('Please implement the remainingMinutesInOven function');
-}
-
-/**
- * Given a number of layers, determines the total preparation time.
- *
- * @param {number} numberOfLayers
- * @returns {number} the total preparation time
- */
-export function preparationTimeInMinutes(numberOfLayers) {
-  throw new Error('Please implement the preparationTimeInMinutes function');
-}
-
-/**
- * Calculates the total working time. That is, the time to prepare all the layers
- * of lasagna, and the time already spent in the oven.
- *
- * @param {number} numberOfLayers
- * @param {number} actualMinutesInOven
- * @returns {number} the total working time
- */
-export function totalTimeInMinutes(numberOfLayers, actualMinutesInOven) {
-  throw new Error('Please implement the totalTimeInMinutes function');
-}
+ const PREPARATION_MINUTES_PER_LAYER = 2;
+ export const  EXPECTED_MINUTES_IN_OVEN = 40;
+ /**
+  * Determines the number of minutes the lasagna still needs to remain in the
+  * oven to be properly prepared.
+  * 
+  * @param {number} actualMinutesInOven
+  * @returns {number} the number of minutes remaining
+  */
+ export function remainingMinutesInOven(actualMinutesInOven) {
+   let timeLeftInOven = EXPECTED_MINUTES_IN_OVEN-actualMinutesInOven;
+   return timeLeftInOven;
+   throw new Error('Please implement the remainingMinutesInOven function');
+ }
+ /**
+  * Given a number of layers, determines the total preparation time.
+  *
+  * @param {number} numberOfLayers
+  * @returns {number} the total preparation time
+  */
+ export function preparationTimeInMinutes(numberOfLayers) {
+   let timeOfLayers=numberOfLayers*PREPARATION_MINUTES_PER_LAYER;
+   return timeOfLayers; 
+   throw new Error('Please implement the preparationTimeInMinutes function');
+ }
+ /**
+  * Calculates the total working time. That is, the time to prepare all the layers
+  * of lasagna, and the time already spent in the oven.
+  *
+  * @param {number} numberOfLayers
+  * @param {number} actualMinutesInOven
+  * @returns {number} the total working time
+  */
+ export function totalTimeInMinutes(numberOfLayers, actualMinutesInOven) {
+   return (numberOfLayers*2) + actualMinutesInOven;
+   throw new Error('Please implement the totalTimeInMinutes function');
+ }
